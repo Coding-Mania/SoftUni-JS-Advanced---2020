@@ -16,5 +16,3 @@ function solve(number) {
     console.log(isSame);
     console.log(sum);
 }
-
-solve(1234);

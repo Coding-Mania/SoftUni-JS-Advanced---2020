@@ -6,5 +6,3 @@ function solve(fruit, weight, price) {
 
     console.log(massage);
 }
-
-solve('apple', 1563, 2.35);

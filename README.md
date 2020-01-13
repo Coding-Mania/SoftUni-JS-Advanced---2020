@@ -1,2 +1,2 @@
-# SoftUni-JS-Advanced---2020
+# SoftUni-JS-Advanced-2020
 SoftUni Module JS Advanced

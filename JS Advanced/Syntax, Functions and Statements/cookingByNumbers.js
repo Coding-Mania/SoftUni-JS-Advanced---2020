@@ -3,6 +3,7 @@ function solve(arr){
     let number = +arr.shift();
     
     for (let index = 0; index < arr.length; index++) {
+        
         const element = arr[index];
         
         switch(element){

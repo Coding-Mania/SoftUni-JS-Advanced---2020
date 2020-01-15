@@ -1,4 +1,5 @@
 function solve(fruit, weight, price) {
+    
     let neededPrice = (weight * price) / 1000;
     weight = weight / 1000;
 

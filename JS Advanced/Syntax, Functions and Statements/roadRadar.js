@@ -1,12 +1,12 @@
 function solve(input) {
-
+   
    let [speed, area] = input;
 
    let obj = {
-      'residential': 20,
-      'city': 50,
-      'interstate': 90,
-      'motorway': 130
+      residential: 20,
+      city: 50,
+      interstate: 90,
+      motorway: 130
    }
 
    if (speed - obj[area] > 0 && speed - obj[area] < 21) {

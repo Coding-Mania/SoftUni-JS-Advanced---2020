@@ -11,5 +11,5 @@ function solve(a, b) {
         }
     }
 
-    console.log(division);
+    return division;
 }

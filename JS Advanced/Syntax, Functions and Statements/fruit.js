@@ -5,5 +5,5 @@ function solve(fruit, weight, price) {
 
     let massage = `I need $${neededPrice.toFixed(2)} to buy ${weight.toFixed(2)} kilograms ${fruit}.`;
 
-    console.log(massage);
+    return massage;
 }

@@ -8,5 +8,5 @@ function solve(array) {
         obj[element] = +array[index + 1];
     }
 
-    console.log(obj);
+    return obj;
 }

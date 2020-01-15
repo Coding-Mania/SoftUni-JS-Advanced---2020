@@ -10,10 +10,10 @@ function solve(input) {
    }
 
    if (speed - obj[area] > 0 && speed - obj[area] < 21) {
-      console.log('speeding');
+      return 'speeding';
    } else if (speed - obj[area] > 20 && speed - obj[area] < 41) {
-      console.log('excessive speeding');
+      return 'excessive speeding';
    } else if (speed - obj[area] > 40) {
-      console.log('reckless driving');
+      return 'reckless driving';
    }
 }

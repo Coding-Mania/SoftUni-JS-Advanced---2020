@@ -8,28 +8,25 @@ function solve(arr) {
 
         switch (element) {
             case 'chop':
-                number = aggregate(number, chop);
+                number = chop(number);
                 break;
             case 'dice':
-                number = aggregate(number, dice);
+                number = dice(number);
                 break;
             case 'spice':
-                number = aggregate(number, spice);
+                number = spice(number);
                 break;
             case 'bake':
-                number = aggregate(number, bake);
+                number = bake(number);
                 break;
             case 'fillet':
-                number = aggregate(number, fillet);
+                number = fillet(number);
                 break;
         }
 
         console.log(number);
     }
 
-    function aggregate(number, func) {
-        return func(number);
-    }
     function chop(number) {
         return number / 2;
     }

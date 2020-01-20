@@ -1,6 +1,6 @@
 function solve(matrix) {
-    const rowsSum = new Array(matrix.length).fill(0,0,matrix.length);;
-    const colsSum = new Array(matrix.length).fill(0,0,matrix.length);;
+    const rowsSum = new Array(matrix.length).fill(0, 0, matrix.length);;
+    const colsSum = new Array(matrix.length).fill(0, 0, matrix.length);;
 
     for (let rows = 0; rows < matrix.length; rows++) {
 
@@ -15,7 +15,7 @@ function solve(matrix) {
         const element = rowsSum[i];
         const element2 = colsSum[i];
 
-        if(element !== rowsSum[i -1] || element2 !== colsSum[i-1]){
+        if (element !== rowsSum[i - 1] || element2 !== colsSum[i - 1]) {
             return false;
         }
     }

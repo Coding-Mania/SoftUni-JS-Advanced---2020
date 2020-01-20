@@ -1,18 +1,14 @@
 function solve(arr) {
-    const subsequence = [];
 
-    let biggestNumber = arr.shift();
-    subsequence.push(biggestNumber);
+    return arr.reduce((acc, element) => {
 
-    for (let i = 0; i < arr.length; i++) {
+        let lastElement = acc[acc.length - 1] === undefined ? 0 : acc[acc.length - 1];
 
-        const element = arr[i];
-
-        if (element >= biggestNumber) {
-            biggestNumber = element;
-            subsequence.push(biggestNumber);
+        if (element >= lastElement) {
+            acc.push(element);
         }
-    }
 
-    return subsequence.join('\n');
+        return acc;
+
+    }, []).join('\n');
 }

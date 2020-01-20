@@ -8,12 +8,12 @@ function solve(matrix) {
             const element = matrix[rows][cols];
             rowsSum[rows] += element;
             colsSum[cols] += element;
-          
+
         }
 
-        if ( rows !== 0 &&rowsSum[rows] !==  rowsSum[rows -1] &&  colsSum[rows] !==  colsSum[rows -1]) {
+        if (rows !== 0 && rowsSum[rows] !== rowsSum[rows - 1] && colsSum[rows] !== colsSum[rows - 1]) {
             return false;
-                    }
+        }
     }
 
     return true;

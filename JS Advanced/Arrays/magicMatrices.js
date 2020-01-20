@@ -22,8 +22,3 @@ function solve(matrix) {
 
     return true;
 }
-
-console.log(solve([[1, 0, 0],
-    [0, 0, 1],
-    [0, 1, 0]]   
-   ));

@@ -1,5 +1,4 @@
 function solve(input) {
-
     const store = {};
 
     input.sort((a, b) => a.localeCompare(b));

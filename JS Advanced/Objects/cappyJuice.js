@@ -13,15 +13,11 @@ function solve(input) {
 
         if (obj[juice[0]] >= 1000) {
 
-            let botlesCount = 0;
+            let botlesCount = Math.floor(obj[juice[0]] / 1000);
+            obj[juice[0]] %= 1000;
 
             if (!botles.hasOwnProperty(juice[0])) {
                 botles[juice[0]] = 0;
-            }
-
-            while (obj[juice[0]] >= 1000) {
-                obj[juice[0]] -= 1000;
-                botlesCount++;
             }
 
             botles[juice[0]] += botlesCount;
@@ -32,3 +28,11 @@ function solve(input) {
         console.log(`${key} => ${botles[key]}`);
     }
 }
+
+solve(['Kiwi => 234',
+    'Pear => 2345',
+    'Watermelon => 3456',
+    'Kiwi => 4567',
+    'Pear => 5678',
+    'Watermelon => 6789']
+)

@@ -7,11 +7,7 @@ function solve(arr) {
         let name = heroInfo.shift();
         let level = +heroInfo.shift();
 
-        let items = heroInfo.pop() || [];
-
-        if (items.length > 0) {
-            items = items.split(', ');
-        }
+        let items = heroInfo[0] ? heroInfo[0].split(', ') : [];
 
         const currentHero = {
             "name": name,

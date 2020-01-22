@@ -10,14 +10,3 @@ function solve(input) {
         return acc;
     }, []).join('\n');
 }
-
-console.log(solve(['Ashton',
-    'Kutcher',
-    'Ariel',
-    'Lilly',
-    'Keyden',
-    'Keyden',
-    'Aizen',
-    'Billy',
-    'Braston']
-));

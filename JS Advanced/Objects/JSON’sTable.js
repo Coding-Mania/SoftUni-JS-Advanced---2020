@@ -1,13 +1,19 @@
 function solve(input) {
     const personsObj = input.map(x => JSON.parse(x));
 
-    console.log('<table>');
+    let table = content => `<table>\n${content}</table>`;
+    let tableRow = content => `\t<tr>\n${content}\t</tr>\n`;
+    let tableData = content => `\t\t<td>${content}</td>\n`;
 
-    personsObj.forEach(e => {
-        let str = (`\t<tr>\n\t\t<td>${e['name']}</td>\n\t\t<td>${e['position']}</td>\n\t\t<td>${e['salary']}</td>\n\t</tr>`);
 
-        console.log(str);
-    });
+    let result = personsObj.reduce((acc, row) => {
+        let tableRowData = Object.values(row).reduce((accTd, td) => {
+            return accTd + tableData(td);
+        }, '')
 
-    console.log('</table>');
+        return acc + tableRow(tableRowData);
+
+    }, '')
+
+    return table(result);
 }

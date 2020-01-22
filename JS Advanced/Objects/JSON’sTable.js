@@ -1,9 +1,5 @@
 function solve(input) {
-    const personsObj = [];
-
-    input.forEach(element => {
-        personsObj.push(JSON.parse(element));
-    });
+    const personsObj = input.map(x => JSON.parse(x));
 
     console.log('<table>');
 

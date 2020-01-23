@@ -13,18 +13,12 @@ function solve(input) {
         }
 
         return acc;
-      
+
     }, [])
 
-    uniqueArrays.sort((a, b) =>  a.length - b.length );
+    uniqueArrays.sort((a, b) => a.length - b.length);
 
-     uniqueArrays.forEach(e => {
-         console.log(`[${e.join(', ')}]`);
-     })
+    uniqueArrays.forEach(e => {
+        console.log(`[${e.join(', ')}]`);
+    })
 }
-
-solve(["[-3, -2, -1, 0, 1, 2, 3, 4]",
-    "[10, 1, -17, 0, 2, 13]",
-    "[4, -3, 3, -2, 2, -1, 1, 0]",
-    '[6, 8, 3, 1, 7, 9,-7, 0]']
-)

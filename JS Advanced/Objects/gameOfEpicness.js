@@ -117,20 +117,3 @@ function solve(kingdomsArgs, warArgs) {
         console.log(`---losses: ${kingdoms[sotredKingdoms[0]][e].losses}`);
     })
 }
-solve(
-    [
-        { kingdom: 'Maiden Way', general: 'Merek', army: 0 },
-        { kingdom: 'Stonegate', general: 'Ulric', army: 0 },
-        { kingdom: 'Stonegate', general: 'Doran', army: 0 },
-        { kingdom: 'YorkenShire', general: 'Quinn', army: 0 },
-        { kingdom: 'YorkenShire', general: 'Quinn', army: 0 },
-        { kingdom: 'Maiden Way', general: 'Berinon', army: 0 }
-    ],
-    [
-        ['YorkenShire', 'Quinn', 'Stonegate', 'Ulric'],
-        ['Stonegate', 'Ulric', 'Stonegate', 'Doran'],
-        ['Stonegate', 'Doran', 'Maiden Way', 'Merek'],
-        ['Stonegate', 'Ulric', 'Maiden Way', 'Merek'],
-        ['Maiden Way', 'Berinon', 'Stonegate', 'Ulric']
-    ]
-);

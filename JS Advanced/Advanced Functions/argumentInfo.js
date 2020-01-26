@@ -12,9 +12,7 @@ function solve(...args) {
         typesCount[typeof iterator]++;
     }
 
-   Object.keys(typesCount).sort((a, b) => (typesCount[b] -typesCount[a])).forEach(element => {
+    Object.keys(typesCount).sort((a, b) => (typesCount[b] - typesCount[a])).forEach(element => {
         console.log(`${element} = ${typesCount[element]}`);
     })
 }
-
-solve('cat', 42,44, function () { console.log('Hello world!'); });

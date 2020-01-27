@@ -1,4 +1,4 @@
-let solution = (function () {
+(function () {
 
     function add(vec1, vec2) {
         let x = vec1[0];
@@ -35,7 +35,7 @@ let solution = (function () {
         return result;
     }
 
-    function cross(vec1, vec2){
+    function cross(vec1, vec2) {
         let x = vec1[0];
         let y = vec1[1];
         let x2 = vec2[0];
@@ -55,5 +55,3 @@ let solution = (function () {
     }
 
 })()
-
-console.log(solution.dot([2, 3], [2, -1]));

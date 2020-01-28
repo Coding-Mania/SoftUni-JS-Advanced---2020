@@ -8,29 +8,29 @@ let manager = (function solution() {
     }
 
     const meal = {
-        Apple: {
+        apple: {
             carbohydrate: 1,
             flavour: 2
         },
-        Lemonade: {
+        lemonade: {
             carbohydrate: 10,
             flavour: 20
         },
-        Burger: {
+        burger: {
             carbohydrate: 5,
             fat: 7,
             flavour: 3
         },
-        Eggs: {
+        eggs: {
             protein: 5,
             fat: 1,
             flavour: 1
         },
-        Turkey: {
-            protein:10,
-            carbohydrate:10,
-            fat:10,
-            flavour:10
+        turkey: {
+            protein: 10,
+            carbohydrate: 10,
+            fat: 10,
+            flavour: 10
         }
     }
 
@@ -47,16 +47,36 @@ let manager = (function solution() {
             report: function () {
                 return `protein=${ingredients.protein} carbohydrate=${ingredients.carbohydrate} fat=${ingredients.fat} flavour=${ingredients.flavour}`;
             },
-            prepare: function(args, quantity){
-                return 'Error: not enough carbohydrate in stock'
+            prepare: function (args, quantity) {
+
+                for (const e of Object.keys(meal[args])) {
+
+                    let needed = meal[args][e] * quantity;
+
+                    if (ingredients[e] < needed) {
+
+                        return `Error: not enough ${e} in stock`;
+                    }
+                }
+
+                for (const e of Object.keys(meal[args])) {
+
+                    let needed = meal[args][e] * quantity;
+
+                    ingredients[e] -= needed;
+
+                }
+
+                return 'Success';
             }
         }
 
-        return commands[command](args, quantity);
+        return commands[command](args, +quantity);
     }
 
     return process;
+
 })()
 
 console.log(manager("restock flavour 50"));
-console.log(manager("prepare lemonade 4"));  
+console.log(manager("prepare lemonade 4")); 

@@ -1,4 +1,4 @@
-let manager = (function solution() {
+(function solution() {
 
     const ingredients = {
         protein: 0,
@@ -77,6 +77,3 @@ let manager = (function solution() {
     return process;
 
 })()
-
-console.log(manager("restock flavour 50"));
-console.log(manager("prepare lemonade 4")); 

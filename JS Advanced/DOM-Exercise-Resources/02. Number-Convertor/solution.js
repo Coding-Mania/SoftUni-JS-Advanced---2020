@@ -4,7 +4,8 @@ function solve() {
 
     let optionList = document.querySelector('#selectMenuTo');
 
-    optionList.innerHTML = `<option selected value="binary">Binary</option><option value="hexadeicmal">Hexadeicmal</option>`;
+    optionList.innerHTML = `<option selected value="binary">Binary</option>
+    <option value="hexadeicmal">Hexadeicmal</option>`;
 
     button.addEventListener('click', process);
 

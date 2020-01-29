@@ -5,7 +5,7 @@ function solve() {
     let optionList = document.querySelector('#selectMenuTo');
 
     optionList.innerHTML = `<option selected value="binary">Binary</option>
-    <option value="hexadeicmal">Hexadeicmal</option>`;
+    <option value="hexadecimal">Hexadecimal</option>`;
 
     button.addEventListener('click', process);
 
@@ -15,7 +15,7 @@ function solve() {
             binary: function (number) {
                 return number.toString(2);
             },
-            hexadeicmal: function (number) {
+            hexadecimal: function (number) {
                 return number.toString(16).toUpperCase();
             }
         }

@@ -1,7 +1,7 @@
 function solve() {
-   let sendBotton = document.getElementById('send');
+   let sendButton = document.getElementById('send');
 
-   sendBotton.addEventListener('click', addContent);
+   sendButton.addEventListener('click', addContent);
 
    function addContent() {
 

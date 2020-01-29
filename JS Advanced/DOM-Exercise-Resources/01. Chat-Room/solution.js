@@ -12,8 +12,7 @@ function solve() {
          let div = document.getElementById('chat_messages');
 
          let messageDiv = document.createElement('div');
-         messageDiv.classList.add('message');
-         messageDiv.classList.add('my-message');
+         messageDiv.classList.add('message', 'my-message');
          messageDiv.textContent = content;
 
          div.appendChild(messageDiv);

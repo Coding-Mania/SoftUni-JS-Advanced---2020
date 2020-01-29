@@ -12,12 +12,8 @@ function solve() {
     function process() {
 
         const functions = {
-            binary: function (number) {
-                return number.toString(2);
-            },
-            hexadecimal: function (number) {
-                return number.toString(16).toUpperCase();
-            }
+            binary: (number) => (number.toString(2)),
+            hexadecimal: (number) => number.toString(16).toUpperCase()
         }
 
         let number = document.getElementById('input').value;

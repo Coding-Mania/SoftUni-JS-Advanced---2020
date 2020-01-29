@@ -10,10 +10,6 @@ function solve() {
 
     function process() {
 
-        let number = document.getElementById('input').value;
-
-        let convertedType = optionList.value;
-
         const functions = {
             binary: function (number) {
                 return number.toString(2);
@@ -22,6 +18,10 @@ function solve() {
                 return number.toString(16).toUpperCase();
             }
         }
+
+        let number = document.getElementById('input').value;
+
+        let convertedType = optionList.value;
 
         let convertedNumber = functions[convertedType](+number);
 

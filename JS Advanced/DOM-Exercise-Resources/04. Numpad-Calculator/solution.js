@@ -8,20 +8,41 @@ function solve() {
     key.addEventListener('click', eventHandler);
     clearButton.addEventListener('click', clearScreen);
 
-    function eventHandler(event){
+    let operators = ['+', '-', '*', '/'];
 
-        console.log(event.target.value);
-        if(event.target.value !== '='){
-
-            view.innerHTML += event.target.value;
-        }
-        else{
-            
-        }    
+    let calc = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '*': (a, b) => a * b,
+        '/': (a, b) => a / b
     }
 
-    function clearScreen(){
-        view.innerHTML ='';
+    function eventHandler(event) {
+
+        if (event.target.value !== '=') {
+
+            if (operators.includes(event.target.value)) {
+                view.innerHTML += ` ${event.target.value} `;
+            } else {
+
+                view.innerHTML += event.target.value;
+            }
+        } else {
+            let [leftOperand, operator, rightOperand] = view.innerHTML.split(' ');
+
+            if (rightOperand.length < 1) {
+                outputView.innerHTML = 'NaN';
+                return;
+            }
+
+            let result = calc[operator](+leftOperand, +rightOperand);
+
+            outputView.innerHTML = result;
+        }
+    }
+
+    function clearScreen() {
+        view.innerHTML = '';
         outputView.innerHTML = '';
     }
 }

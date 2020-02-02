@@ -17,7 +17,6 @@ function solve() {
   function eventHandler() {
 
     let obj = JSON.parse(inputArea.value);
-    inputArea.value = null;
 
     let tr = document.createElement('tr');
 

@@ -25,7 +25,6 @@ function solve() {
     let img = document.createElement('img')
     img.src = obj[0].img;
     imgTd.appendChild(img);
-    console.log(imgTd.innerHTML)
 
     let name = document.createElement('td');
     name.innerHTML = `<p>${obj[0].name}</p>`;

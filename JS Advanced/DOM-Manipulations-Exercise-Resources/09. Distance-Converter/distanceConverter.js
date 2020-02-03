@@ -4,7 +4,6 @@ function attachEventsListeners() {
 
     button.addEventListener('click', eventHandler);
 
-
     function eventHandler(event) {
         let div = event.target.parentElement;
         let distance = +div.querySelector('#inputDistance').value;

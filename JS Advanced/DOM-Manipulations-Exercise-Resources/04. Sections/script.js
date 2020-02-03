@@ -11,12 +11,10 @@ function create(words) {
 
       div.appendChild(p);
 
-      contentDiv.appendChild(div);
-   }
-
-   Array.from(contentDiv.children).forEach(div => {
       div.addEventListener('click', () => {
          div.firstChild.style.display = 'block';
       })
-   })
+
+      contentDiv.appendChild(div);
+   }
 }

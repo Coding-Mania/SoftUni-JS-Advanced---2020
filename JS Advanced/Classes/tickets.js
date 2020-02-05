@@ -12,7 +12,7 @@ function solve(ticketsInput, sortingCriterion) {
     ticketsInput.forEach(ticketInfo => {
         let [name, price, status] = ticketInfo.split('|');
 
-        let ticket = new Ticket(name, price, status);
+        let ticket = new Ticket(name, +price, status);
 
         tickets.push(ticket);
     });
@@ -27,10 +27,3 @@ function solve(ticketsInput, sortingCriterion) {
 
    return tickets;
 }
-
-console.log( solve(['Philadelphia|94.20|available',
-'New York City|95.99|available',
-'New York City|95.99|sold',
-'Boston|126.20|departed'],
-'status'
-))

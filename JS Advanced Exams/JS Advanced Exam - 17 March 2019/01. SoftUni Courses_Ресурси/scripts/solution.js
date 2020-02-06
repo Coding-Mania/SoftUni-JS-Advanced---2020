@@ -1,12 +1,12 @@
 function solve() {
 
-   let educationForm = document.querySelectorAll('#educationForm input');
+   let educationForm = document.querySelector('#educationForm input');
 
    const coursesObj = {
-      'JS-Fundamentals': 170,
-      'JS-Advanced': 180,
-      'JS-Applications': 190,
-      'JS-Web': 490
+      'js-fundamentals': 170,
+      'js-advanced': 180,
+      'js-applications': 190,
+      'js-web': 490
    }
 
    let button = document.querySelector('.courseFoot button[value="signMeUp"]');
@@ -14,17 +14,9 @@ function solve() {
    button.addEventListener('click', eventHandler);
 
    function eventHandler() {
-      let courseBodyDiv = document.querySelectorAll('.courseBody ul li');
-
-      let educationValue;
-
-      for (const iterator of educationForm) {
-         if (iterator.checked) {
-            educationValue = iterator.value;
-         }
-      }
-
-      if (educationValue === 'online') {
+      let courseBodyDiv = document.querySelectorAll('[type=checkbox]');
+     
+      if (!educationForm.checked) {
          for (const key of Object.keys(coursesObj)) {
             coursesObj[key] -= coursesObj[key] * 0.06;
          }
@@ -34,13 +26,13 @@ function solve() {
       let checkedCourses = [];
 
       courseBodyDiv.forEach(li => {
-         let checkBox = li.querySelector('input');
-         if (checkBox.checked) {
-            let courseName = li.querySelector('label').innerHTML.split(' - ')[0].replace(' ', '-');
+         
+         if (li.checked) {
+            let courseName = li.value;
             
             checkedCourses.push(courseName);
-            if (checkedCourses.includes('JS-Fundamentals') && checkedCourses.includes('JS-Fundamentals')) {
-               coursesObj['JS-Advanced'] -= coursesObj['JS-Advanced'] * 0.1;
+            if (checkedCourses.includes('js-fundamentals') && checkedCourses.includes('js-fundamentals')) {
+               coursesObj['js-advanced'] -= coursesObj['js-advanced'] * 0.1;
             }
          }
       });
@@ -56,7 +48,7 @@ function solve() {
          myCoursesDiv.appendChild(li);
       })
 
-      if (checkedCourses.includes('JS-Fundamentals') && checkedCourses.includes('JS-Advanced') && checkedCourses.includes('JS-Applications')) {
+      if (checkedCourses.includes('js-fundamentals') && checkedCourses.includes('js-advanced') && checkedCourses.includes('js-applications')) {
          totalPrice -= totalPrice * 0.06;
       }
       if (checkedCourses.length === 4) {

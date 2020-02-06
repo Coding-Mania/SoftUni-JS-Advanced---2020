@@ -1,6 +1,5 @@
 function solve() {
 
-   let courseBodyDiv = document.querySelectorAll('.courseBody ul li');
    let educationForm = document.querySelectorAll('#educationForm input');
 
    const coursesObj = {
@@ -15,6 +14,8 @@ function solve() {
    button.addEventListener('click', eventHandler);
 
    function eventHandler() {
+      let courseBodyDiv = document.querySelectorAll('.courseBody ul li');
+
       let educationValue;
 
       for (const iterator of educationForm) {
@@ -38,7 +39,7 @@ function solve() {
             let courseName = li.querySelector('label').innerHTML.split(' - ')[0].replace(' ', '-');
             
             checkedCourses.push(courseName);
-            if (checkedCourses.includes('JS-Fundamentals') ** checkedCourses.includes('JS-Fundamentals')) {
+            if (checkedCourses.includes('JS-Fundamentals') && checkedCourses.includes('JS-Fundamentals')) {
                coursesObj['JS-Advanced'] -= coursesObj['JS-Advanced'] * 0.1;
             }
          }
@@ -60,7 +61,7 @@ function solve() {
       }
       if (checkedCourses.length === 4) {
          let li = document.createElement('li');
-         li.innerHTML = 'HTML and CSS';
+         li.textContent = 'HTML and CSS';
          myCoursesDiv.appendChild(li);
       }
 

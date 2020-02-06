@@ -65,7 +65,6 @@ function solve() {
          myCoursesDiv.appendChild(li);
       }
 
-      console.log(myCoursesDiv.children.length)
       priceDiv.innerHTML = `Cost: ${Math.floor(totalPrice).toFixed(2)} BGN`;
 
      button.removeEventListener('click', eventHandler);

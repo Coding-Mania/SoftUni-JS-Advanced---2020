@@ -118,19 +118,3 @@ class Hotel {
         }).join('----------\n');
     }
 }
-
-let hotel = new Hotel('HotUni', 10);
-
-hotel.rentARoom('Peter', 'single', 4);
-hotel.rentARoom('Robert', 'double', 4);
-hotel.rentARoom('Geroge', 'maisonette', 6);
-
-console.log(hotel.roomService(3, 'housekeeping'));
-console.log(hotel.roomService(3, 'drink'));
-console.log(hotel.roomService(2, 'room'));
-console.log(hotel.checkOut(2));
-
-console.log(hotel.report());
-
-
-`Two test not passing`

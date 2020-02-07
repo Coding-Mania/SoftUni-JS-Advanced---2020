@@ -103,6 +103,7 @@ class Hotel {
         }
 
         this.rooms[room.type]++;
+        this.bookings.splice(this.bookings.indexOf(room), 1);
 
         return `We hope you enjoyed your time here, Mr./Mrs. ${room.name}. The total amount of money you have to pay is ${totalMoney} BGN.`
     }
@@ -124,10 +125,12 @@ hotel.rentARoom('Peter', 'single', 4);
 hotel.rentARoom('Robert', 'double', 4);
 hotel.rentARoom('Geroge', 'maisonette', 6);
 
-hotel.roomService(3, 'housekeeping');
-hotel.roomService(3, 'drink');
-hotel.roomService(2, 'room');
+console.log(hotel.roomService(3, 'housekeeping'));
+console.log(hotel.roomService(3, 'drink'));
+console.log(hotel.roomService(2, 'room'));
+console.log(hotel.checkOut(2));
 
 console.log(hotel.report());
 
 
+`Two test not passing`

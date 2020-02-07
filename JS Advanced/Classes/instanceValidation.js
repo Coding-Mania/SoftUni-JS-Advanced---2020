@@ -2,11 +2,6 @@ class CheckingAccount {
     emailPattern = /\w+@\w+.?\w+/gm;
     namePattern = /[\W\d]/gm;
 
-    _id;
-    _email;
-    _firstName;
-    _lastName;
-
     constructor(clientId, email, firstName, lastName) {
         this.clientId = clientId;
         this.email = email;

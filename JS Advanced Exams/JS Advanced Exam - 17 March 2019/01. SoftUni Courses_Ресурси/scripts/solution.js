@@ -35,7 +35,13 @@ function solve() {
       if (educationForm.checked) {
          Object.keys(coursesPrice).forEach(c => coursesPrice[c] -= coursesPrice[c] * 0.06);
       }
-   
+
+      checkForDiscount(courseBody);
+
+      setFinalValues();
+   }
+
+   function checkForDiscount(courseBody) {
       courseBody.forEach(e => {
          if (e.checked) {
             courses.push(e.name);
@@ -47,11 +53,9 @@ function solve() {
       if (courses.length === 4) {
          courses.push('HTML and CSS');
       }
-
-      setFinalValues();
    }
 
-   function setFinalValues(){
+   function setFinalValues() {
       courses.forEach(e => {
 
          totalPrice += coursesPrice[e];

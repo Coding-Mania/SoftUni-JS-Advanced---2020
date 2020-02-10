@@ -1,6 +1,3 @@
-let assert = require('chai').assert;
-let isOddOrEven = require('./functionality');
-
 describe('isOddOrEven functionality', () => {
     it('Should return undefined with non string input - boolean', () => {
         let actual = isOddOrEven(true);

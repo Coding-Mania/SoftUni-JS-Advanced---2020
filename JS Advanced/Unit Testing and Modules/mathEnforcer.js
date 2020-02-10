@@ -79,8 +79,8 @@ describe('mathEnforcer functionality', () => {
             assert.equal(expected, actual);
         });
         it('sum should return correct value with floating point numbers', () => {
-            let actual = mathEnforcer.sum(1.2, 2);
-            let expected = 3.2;
+            let actual = mathEnforcer.sum(1.2, 2.2);
+            let expected = 3.4000000000000004;
 
             assert.equal(expected, actual);
         });

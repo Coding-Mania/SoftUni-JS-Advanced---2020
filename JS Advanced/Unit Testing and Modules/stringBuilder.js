@@ -83,7 +83,16 @@ describe('StringBuilder functionality', () => {
             let actual = sb.toString();
             var expected = '123';
 
-            assert.equal(actual, expected)
+            assert.deepEqual(actual, expected)
         })
+    })
+    describe('Type of StringBuilder', () => {
+        it('Should have the correct function properties', () => {
+            assert.isFunction(StringBuilder.prototype.append);
+            assert.isFunction(StringBuilder.prototype.prepend);
+            assert.isFunction(StringBuilder.prototype.insertAt);
+            assert.isFunction(StringBuilder.prototype.remove);
+            assert.isFunction(StringBuilder.prototype.toString);
+        });
     })
 })

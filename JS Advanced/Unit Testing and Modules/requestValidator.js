@@ -1,6 +1,6 @@
 function solve(object) {
     const methods = ["GET", "POST", "DELETE", "CONNECT"];
-    const uriPattern = /^(\*|[a-zA-Z\d\.]+)$/gim;
+    const uriPattern = /^(\*|[a-z\d\.]+)$/gim;
     const versionPattern = /HTTP\/0.9|HTTP\/1.0|HTTP\/1.1|HTTP\/2.0/gm;
     const messagePattern = /^[^<>\\&'"]*$/gim;
 

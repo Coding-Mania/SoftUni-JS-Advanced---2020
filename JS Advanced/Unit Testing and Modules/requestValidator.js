@@ -1,17 +1,17 @@
 function solve(object) {
-    const methodPattern = /GET|POST|DELETE|CONNECT/gm;
-    const uriPattern = /\w*/gm;
+    const methods = ["GET", "POST", "DELETE", "CONNECT"];
+    const uriPattern = /^(\*|[a-zA-Z\d\.]+)$/gim;
     const versionPattern = /HTTP\/0.9|HTTP\/1.0|HTTP\/1.1|HTTP\/2.0/gm;
-    const messagePattern = /\d/gm;
+    const messagePattern = /^[^<>\\&'"]*$/gim;
 
-    if (!methodPattern.exec(object.method)) {
+    if (!methods.includes(object.method) || !object.hasOwnProperty('method')) {
         throwError('Method');
-    } else if (uriPattern) {
+    } else if (!uriPattern.exec(object.uri) || !object.hasOwnProperty('uri')) {
         throwError('URI');
-    } else if (!versionPattern.exec(object.version)) {
+    } else if (!versionPattern.exec(object.version) || !object.hasOwnProperty('version')) {
         throwError('Version');
-    }else if (!messagePattern.exec(object.message)) {
-        throwError('Version');
+    } else if (!messagePattern.exec(object.message) || !object.hasOwnProperty('message')) {
+        throwError('Message');
     }
 
     return object;

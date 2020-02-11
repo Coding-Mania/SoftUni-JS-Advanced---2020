@@ -126,7 +126,6 @@ describe('PaymentPackage functionality', () => {
         })
         it('toString should return correct output with zero value', () => {
             pP.value = 0;
-            pP.VAT = 0;
             let actual = pP.toString();
             let expected = [
                 `Package: ${pP.name}` + (pP.active === false ? ' (inactive)' : ''),

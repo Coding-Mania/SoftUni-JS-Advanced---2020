@@ -18,7 +18,6 @@ function solve() {
 
    let courses = [];
 
-   let button = document.querySelector('.courseFoot button[value="signMeUp"]');
 
    let myCourses = document.querySelector('#myCourses .courseBody ul');
 
@@ -27,7 +26,6 @@ function solve() {
    let totalPrice = 0;
    let cost = document.querySelector('#myCourses .courseFoot p');
 
-   function eventHandler() {
 
       let courseBody = document.querySelectorAll('.courseBody ul li input');
       let educationForm = document.querySelectorAll('#educationForm input')[1];
@@ -39,7 +37,6 @@ function solve() {
       checkForDiscount(courseBody);
 
       setFinalValues();
-   }
 
    function checkForDiscount(courseBody) {
       courseBody.forEach(e => {

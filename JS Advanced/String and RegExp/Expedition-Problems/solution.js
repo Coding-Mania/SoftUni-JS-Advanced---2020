@@ -2,9 +2,9 @@ function solve() {
     const eastPattern = /east.*?(\d{2}).*?,.*?(\d{6})/im;
     const northPattern = /north.*?(\d{2}).*?,.*?(\d{6})/mig;
 
-   let key = document.querySelector('#string').value;
-    let text =  document.querySelector('#text').value;
-   let result = document.querySelector('#result');
+    let key = document.querySelector('#string').value;
+    let text = document.querySelector('#text').value;
+    let result = document.querySelector('#result');
 
     let eastCoordinates = text.match(eastPattern);
 
@@ -12,7 +12,6 @@ function solve() {
     northCoordinates = northCoordinates.pop();
     northCoordinates = northPattern.exec(northCoordinates);
     let massage = text.match(`${key}(.+)${key}`)[1];
-
 
     let northCoordinateP = document.createElement('p');
     northCoordinateP.innerHTML = `${northCoordinates[1]}.${northCoordinates[2]} N`;

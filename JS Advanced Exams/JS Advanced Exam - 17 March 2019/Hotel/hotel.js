@@ -16,16 +16,20 @@ class Hotel {
     }
 
 
-    roomsPricing = {
-        single: 50,
-        double: 90,
-        maisonette: 135
+    get roomsPricing() {
+        return {
+            single: 50,
+            double: 90,
+            maisonette: 135
+        }
     }
 
-    servicesPricing = {
-        food: 10,
-        drink: 15,
-        housekeeping: 25
+    get servicesPricing() {
+        return {
+            food: 10,
+            drink: 15,
+            housekeeping: 25
+        }
     }
 
     rentARoom(clientName, roomType, nights) {
@@ -53,7 +57,6 @@ class Hotel {
         if (!Object.keys(this.servicesPricing).includes(serviceType)) {
             return `We do not offer ${serviceType} service.`;
         }
-
 
         let room;
 

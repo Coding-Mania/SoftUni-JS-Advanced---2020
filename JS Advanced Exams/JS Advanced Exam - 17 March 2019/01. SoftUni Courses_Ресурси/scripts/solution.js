@@ -34,7 +34,7 @@ function solve() {
    function eventHandler() {
 
       if (educationForm.checked) {
-         Object.keys(coursesPrice).forEach(c => coursesPrice[c] -= coursesPrice[c] * 0.06);
+         Object.keys(coursesPrice).forEach(c => coursesPrice[c] *= 0.94);
       }
 
       Array.from(courseBody).forEach(e => {
@@ -44,7 +44,7 @@ function solve() {
          }
       })
       if (courses.includes('js-fundamentals') && courses.includes('js-advanced')) {
-         coursesPrice['js-advanced'] = coursesPrice['js-advanced'] - (coursesPrice['js-advanced'] * 0.1);
+         coursesPrice['js-advanced'] *=  0.9;
       }
       if (courses.length === 4) {
          courses.push('HTML and CSS');
@@ -65,7 +65,7 @@ function solve() {
       });
 
       if (courses.includes('js-fundamentals') && courses.includes('js-advanced') && courses.includes('js-applications')) {
-         totalPrice -= totalPrice * 0.06;
+         totalPrice *= 0.94;
       }
 
       totalPrice = Math.floor(totalPrice);

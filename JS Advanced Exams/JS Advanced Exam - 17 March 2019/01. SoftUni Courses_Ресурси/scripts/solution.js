@@ -44,7 +44,7 @@ function solve() {
          }
       })
       if (courses.includes('js-fundamentals') && courses.includes('js-advanced')) {
-         coursesPrice['js-advanced'] = Math.floor(coursesPrice['js-advanced'] - (coursesPrice['js-advanced'] * 0.1));
+         coursesPrice['js-advanced'] = coursesPrice['js-advanced'] - (coursesPrice['js-advanced'] * 0.1);
       }
       if (courses.length === 4) {
          courses.push('HTML and CSS');
@@ -54,12 +54,11 @@ function solve() {
    }
 
    function setFinalValues() {
-      courses.forEach(e => {
+      Array.from(courses).forEach(e => {
 
          totalPrice += coursesPrice[e];
          let li = document.createElement('li');
 
-         console.log(li)
          li.textContent = coursesNames[e];
          myCourses.appendChild(li);
 
@@ -74,5 +73,3 @@ function solve() {
       cost.innerHTML = `Cost: ${totalPrice.toFixed(2)} BGN`;
    }
 }
-
-solve();

@@ -18,7 +18,7 @@ class ChristmasDinner {
         this._budget = value;
     }
 
-    shopping([type, price]){
+    shopping([type, price]) {
 
         let neededMoney = price;
 
@@ -33,7 +33,7 @@ class ChristmasDinner {
         return `You have successfully bought ${type}!`
     }
 
-    recipes(recipe){
+    recipes(recipe) {
 
         for (const product of recipe.productsList) {
             if (!this.products.includes(product)) {
@@ -46,7 +46,7 @@ class ChristmasDinner {
         return `${recipe.recipeName} has been successfully cooked!`
     }
 
-    inviteGuests(name, dish){
+    inviteGuests(name, dish) {
         let recipe = null;
         for (const obj of this.dishes) {
             if (obj.recipeName === dish) {
@@ -59,34 +59,32 @@ class ChristmasDinner {
             throw new Error('We do not have this dish');
         }
 
-        for (const obj in this.guests) {
-            if (obj.hasOwnProperty(name)) {
-                throw new Error('This guest has already been invited');
-            }
+        if (this.guests.hasOwnProperty(name)) {
+            throw new Error('This guest has already been invited');
         }
-    
-       Object.defineProperty(this.guests, name, {
-        value: dish,
-        writable: false,
-        enumerable: true
-      });
 
-       return `You have successfully invited ${name}!`
+        Object.defineProperty(this.guests, name, {
+            value: dish,
+            writable: false,
+            enumerable: true
+        });
+
+        return `You have successfully invited ${name}!`
     }
 
-    showAttendance(){
+    showAttendance() {
         return Object.keys(this.guests).reduce((acc, name) => {
-           let products = null;
-           let recipe = this.guests[name];
+            let products = null;
+            let recipe = this.guests[name];
 
-           for (const obj of this.dishes) {
+            for (const obj of this.dishes) {
                 if (obj.recipeName === recipe) {
                     products = obj.productsList.join(', ');
                 }
-           }
+            }
 
-           acc += `${name} will eat ${recipe}, which consists of ${products}\n`;
-           return acc;
-        },'').trim();
+            acc += `${name} will eat ${recipe}, which consists of ${products}\n`;
+            return acc;
+        }, '').trim();
     }
 }

@@ -1,12 +1,18 @@
 class Forum {
+    
     _users = [];
     _questions = [];
     _id = 1;
+    _loggedUsers = [];
 
     register(username, password, repeatPassword, email) {
+
         if (username === '' || password === '' || repeatPassword === '' || email === '') {
             throw new Error('Input can not be empty');
-        } else if (password !== repeatPassword) {
+        }
+
+        if (password !== repeatPassword) {
+
             throw new Error('Passwords do not match');
         }
 
@@ -45,7 +51,7 @@ class Forum {
             throw new Error('There is no such user');
         }
 
-        user.login = true;
+        this._loggedUsers.push(username);
 
         return 'Hello! You have logged in successfully';
     }
@@ -64,7 +70,10 @@ class Forum {
             throw new Error('There is no such user');
         }
 
-        user.login = false;
+        let index = this._loggedUsers.indexOf(username);
+
+        this._loggedUsers.splice(index, 1);
+
         return 'You have logged out successfully'
     }
 
@@ -77,7 +86,7 @@ class Forum {
             }
         });
 
-        if (!user || user.login === false) {
+        if (!user || !this._loggedUsers.includes(username)) {
             throw new Error('You should be logged in to post questions');
         }
 
@@ -107,7 +116,7 @@ class Forum {
             }
         });
 
-        if (!user || user.login === false) {
+        if (!user || !this._loggedUsers.includes(username)) {
             throw new Error('You should be logged in to post answers');
         }
 
@@ -143,19 +152,3 @@ class Forum {
         }, '').trim();
     }
 }
-
-let forum = new Forum();
-
-forum.register('Michael', '123', '123', 'michael@abv.bg');
-forum.register('Stoyan', '123ab7', '123ab7', 'some@gmail@.com');
-forum.login('Michael', '123');
-forum.login('Stoyan', '123ab7');
-
-forum.postQuestion('Michael', "Can I rent a snowboard from your shop?");
-forum.postAnswer('Stoyan', 1, "Yes, I have rented one last year.");
-forum.postQuestion('Stoyan', "How long are supposed to be the ski for my daughter?");
-forum.postAnswer('Michael', 2, "How old is she?");
-forum.postAnswer('Michael', 2, "Tell us how tall she is.");
-
-console.log(forum.showQuestions());
-

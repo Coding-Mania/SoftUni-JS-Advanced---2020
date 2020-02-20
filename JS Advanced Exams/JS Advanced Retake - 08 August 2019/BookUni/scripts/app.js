@@ -24,13 +24,15 @@ function solve() {
 
             div.appendChild(p);
 
-            if (year > 2000) {
+            if (year >= 2000) {
+
                 let buyButton = createHTMLElement('button', null, { type: 'innerHTML', value: `Buy it only for ${price.toFixed(2)} BGN` }, 'click', buyBookHandler);
                 let oldSectionButton = createHTMLElement('button', null, { type: 'innerHTML', value: `Move to old section` }, 'click', oldSectionHandler);
                 div.appendChild(buyButton);
                 div.appendChild(oldSectionButton);
                 newBooks.appendChild(div);
             } else {
+
                 let newPrice = price * 0.85;
                 let buyButton = createHTMLElement('button', null, { type: 'innerHTML', value: `Buy it only for ${newPrice.toFixed(2)} BGN` }, 'click', buyBookHandler);
                 div.appendChild(buyButton);
@@ -38,7 +40,6 @@ function solve() {
                 oldBooks.appendChild(div);
             }
         }
-
     }
 
     function buyBookHandler() {
@@ -83,7 +84,6 @@ function solve() {
         if (event) {
             element.addEventListener(event, eventHandler);
         }
-
 
         return element;
     }

@@ -21,17 +21,21 @@ function solve() {
 
             let div = createHTMLElement('div', { name: 'class', value: 'book' });
             let p = createHTMLElement('p', null, { type: 'innerHTML', value: `${title} [${year}]` });
-            let buyButton = createHTMLElement('button', null, { type: 'innerHTML', value: `Buy it only for ${price.toFixed(2)} BGN` }, 'click', buyBookHandler);
 
             div.appendChild(p);
-            div.appendChild(buyButton);
 
-            if (year < 2000) {
-                oldBooks.appendChild(div);
-            } else {
+            if (year > 2000) {
+                let buyButton = createHTMLElement('button', null, { type: 'innerHTML', value: `Buy it only for ${price.toFixed(2)} BGN` }, 'click', buyBookHandler);
                 let oldSectionButton = createHTMLElement('button', null, { type: 'innerHTML', value: `Move to old section` }, 'click', oldSectionHandler);
+                div.appendChild(buyButton);
                 div.appendChild(oldSectionButton);
                 newBooks.appendChild(div);
+            } else {
+                let newPrice = price * 0.85;
+                let buyButton = createHTMLElement('button', null, { type: 'innerHTML', value: `Buy it only for ${newPrice.toFixed(2)} BGN` }, 'click', buyBookHandler);
+                div.appendChild(buyButton);
+
+                oldBooks.appendChild(div);
             }
         }
 

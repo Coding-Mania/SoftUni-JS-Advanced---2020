@@ -86,20 +86,7 @@ class Library {
                 return acc2;
             }, []).join(', ');
 
-            // Received books: {title} by {author}, {title2} by {author2}…"       
-
             return acc + '\n';
         }, '');
     }
 }
-
-let lib = new Library('L');
-
-lib.subscribe('Peter', 'normal');
-lib.subscribe('John', 'special');
-lib.subscribe('Josh','vip');
-
-
-lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin');
-console.log(lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin'));
-console.log(lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin'));

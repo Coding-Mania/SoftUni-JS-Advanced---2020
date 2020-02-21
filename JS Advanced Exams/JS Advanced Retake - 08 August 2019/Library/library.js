@@ -59,7 +59,7 @@ class Library {
             throw new Error(`There is no such subscriber as ${subscriberName}`);
         }
 
-        let subTypeLimit = this.subscriptionTypes[this.subscribe.type]
+        let subTypeLimit = this.subscriptionTypes[subscriber.type];
 
         if (subscriber.books.length === subTypeLimit) {
 
@@ -93,24 +93,13 @@ class Library {
     }
 }
 
-let lib = new Library('Lib');
+let lib = new Library('L');
 
 lib.subscribe('Peter', 'normal');
 lib.subscribe('John', 'special');
 lib.subscribe('Josh','vip');
 
-console.log(lib.subscribers);
 
 lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin');
-lib.receiveBook('Peter', 'Lord of the rings', 'J. R. R. Tolkien');
-lib.receiveBook('John', 'Harry Potter', 'J. K. Rowling');
-lib.receiveBook('Josh', 'Graf Monte Cristo', 'Alexandre Dumas');
-lib.receiveBook('Josh','Cromwell','Victor Hugo');
-lib.receiveBook('Josh','Marie Tudor','Victor Hugo');
-lib.receiveBook('Josh','Bug-Jargal','Victor Hugo');
-lib.receiveBook('Josh','Les Orientales','Victor Hugo');
-lib.receiveBook('Josh','Marion de Lorme','Victor Hugo');
-
-console.log(lib.subscribers[0].books);
-console.log(lib.subscribers[2].books);
-lib.unsubscribe('John');
+console.log(lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin'));
+console.log(lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin'));

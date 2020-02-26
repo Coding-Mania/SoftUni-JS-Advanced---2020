@@ -43,3 +43,4 @@ c.addEmployee("Stanimir", 1200, "digital marketing manager", "Marketing");
 c.addEmployee("Pesho", 1000, "graphical designer", "Marketing");
 c.addEmployee("Gosho", 1350, "HR", "Human resources");
 console.log(c.bestDepartment());
+

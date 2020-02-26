@@ -1,4 +1,4 @@
-function getFibonator() {
+function getFibonacci() {
 
     function fib(n) {
         if (n <= 1) {
@@ -12,10 +12,3 @@ function getFibonator() {
 
     return () => fib(counter++);
 }
-
-let fib = getFibonator();
-
-console.log(fib())
-console.log(fib())
-console.log(fib())
-console.log(fib())

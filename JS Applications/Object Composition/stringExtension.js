@@ -42,7 +42,6 @@
 
             let splittedString = this.split(' ');
 
-
             if (splittedString.length === 1) {
                 return splittedString.slice(0, splittedString[0].length - 3) + '...';
             }
@@ -62,7 +61,6 @@
             return string.trim(' ')+ '...';
         }
 
-     
         let newString = this.slice(0, n - 3) + '...';
 
         return newString;
@@ -79,10 +77,3 @@
     }
 
 }())
-
-var testString = 'the quick brown fox jumps over the lazy dog';
-console.log(testString.length)
-
-console.log(testString.truncate(6));
-console.log(testString.truncate(43));
-console.log(''.isEmpty());

@@ -60,10 +60,6 @@
 
             return string.trim(' ')+ '...';
         }
-
-        let newString = this.slice(0, n - 3) + '...';
-
-        return newString;
     }
 
     String.format = function (string, ...params) {
@@ -75,5 +71,4 @@
 
         return string;
     }
-
 }())

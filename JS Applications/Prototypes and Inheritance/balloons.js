@@ -23,13 +23,15 @@ function solve() {
     }
 
     class BirthdayBalloon extends PartyBalloon {
-        constructor(color, gasWeight, ribbonColor, ribbonLength) {
+        constructor(color, gasWeight, ribbonColor, ribbonLength,text) {
             super(color, gasWeight)
 
             this._ribbon = {
                 color: ribbonColor,
                 length: ribbonLength
             }
+
+            this.text = text;
         }
 
         get ribbon() {
@@ -45,9 +47,3 @@ function solve() {
     }
 
 }
-
-let classes = solve();
-
-let test = new classes.PartyBalloon("Tumno-bqlo", 20.5, "Svetlo-cherno", 10.25);
-let ribbon = test.ribbon;
-console.log(ribbon.color)

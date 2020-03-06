@@ -23,7 +23,7 @@ function solve() {
         }
 
         toString() {
-            return `Post: ${this.title}\nContent: ${this.content}\nRating: ${this.likes - this.dislikes}` + this.getComments();
+            return  super.toString() + `\nRating: ${this.likes - this.dislikes}` + this.getComments();
         }
 
         getComments() {
@@ -51,7 +51,7 @@ function solve() {
         }
 
         toString() {
-            return `Post: ${this.title}\nContent: ${this.content}\nViews: ${this.views}`;
+            return  super.toString() + `\nViews: ${this.views}`;
         }
     }
 

@@ -11,7 +11,7 @@ function getInfo() {
         return x;
     }
 
-    let id = document.querySelector('#stopId').value;
+    let id = document.querySelector('#stopId').value.trim(' ');
 
     fetch(`https://test-415e0.firebaseio.com/businfo/${id}.json`)
         .then(x => x.json())

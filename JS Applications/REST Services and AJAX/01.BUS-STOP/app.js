@@ -17,12 +17,12 @@ function getInfo() {
         .then(x => x.json())
         .then(x => validate(x))
         .then(x => {
-            
+
             result.innerHTML = '';
             ul.innerHTML = '';
             result.innerHTML = x.name;
 
-            Object.entries(x.buses).forEach(([busId,time]) => {
+            Object.entries(x.buses).forEach(([busId, time]) => {
                 let li = document.createElement('li');
                 li.innerHTML = `Bus ${busId} arrives in ${time} minutes`;
 
@@ -31,6 +31,7 @@ function getInfo() {
         })
         .catch(x => {
             ul.innerHTML = '';
-            result.innerHTML = 'Error'
+            result.innerHTML = 'Error';
+            console.error(x.message);
         });
 }

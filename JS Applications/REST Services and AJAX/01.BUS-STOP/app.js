@@ -4,7 +4,7 @@ function getInfo() {
     let ul = document.querySelector('#buses');
 
     function validate(x) {
-        if (x === null || x === undefined) {
+        if (x.status !== 200) {
             throw new Error('No data');
         }
 
@@ -14,8 +14,8 @@ function getInfo() {
     let id = document.querySelector('#stopId').value.trim(' ');
 
     fetch(`https://test-415e0.firebaseio.com/businfo/${id}.json`)
-        .then(x => x.json())
         .then(x => validate(x))
+        .then(x => x.json())
         .then(x => {
 
             result.innerHTML = '';

@@ -25,11 +25,9 @@ function attachEvents() {
             'd': '°'
         }
 
-        console.log(upcomingData)
         let infoDiv = document.querySelector('#current');
 
         let forecastSpan = createHTMLElement('span', ['condition symbol'], symbols[dayData.forecast.condition[0]]);
-        console.log(forecastSpan)
         let span = createHTMLElement('span', ['condition']);
         let spanLocation = createHTMLElement('span', ['forecast-data'], dayData.name);
         let spanDegree = createHTMLElement('span', ['forecast-data'], `${dayData.forecast.low + symbols['d']}/${dayData.forecast.high + symbols['d']}`);

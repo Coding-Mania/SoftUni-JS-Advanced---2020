@@ -34,9 +34,10 @@ const formElement = {
 
         clearFormValues();
 
-        await firebaseProvider.createBook(book);
-
-        loadBooks();
+        if (formElement.title.value !== '' && formElement.author.value !== '' && formElement.ISBN.value !== '') {
+            await firebaseProvider.createBook(book);
+            loadBooks();
+        }
     }
 
     function renderHTML(books) {
@@ -105,11 +106,12 @@ const formElement = {
                     'tags': formElement.tags.value
                 }
 
-                await firebaseProvider.updateBook(book, bookId);
+                if (formElement.title.value !== '' && formElement.author.value !== '' && formElement.ISBN.value !== '') {
+                    await firebaseProvider.updateBook(book, bookId);
+                    clearFormValues();
 
-                clearFormValues();
-
-                loadBooks();
+                    loadBooks();
+                }
             }
         }
     }

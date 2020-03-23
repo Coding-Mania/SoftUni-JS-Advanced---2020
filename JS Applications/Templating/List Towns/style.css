@@ -76,6 +76,7 @@ label {
 }
 
 #root li {
+    list-style: none;
     margin-bottom: 1rem;
     width: 27rem;
     border-bottom: 0.2rem solid grey;
@@ -86,3 +87,10 @@ label {
 #root li:nth-child(1) {
     padding-top: 0.5rem;
 }
+
+li:before {
+    content: '🌏';
+    margin-left: -20px;
+    margin-right: 10px;
+    }
+    

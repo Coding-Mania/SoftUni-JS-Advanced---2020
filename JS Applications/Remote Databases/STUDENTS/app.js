@@ -53,12 +53,12 @@ const rootURL = 'https://students-99cba.firebaseio.com';
     async function addStudent() {
         const inputs = document.querySelectorAll('#input input');
         const facultyNumberRegex = /^\d+$/;
-        const nameRegex = /^[a-z]+|[А-Я][а-я]+$/i;
+        const nameRegex = /^[A-Z][a-z]+|[А-Я][а-я]+$/;
 
         const name = inputs[0].value.trim(' ');
         const lastName = inputs[1].value.trim(' ');
         const facultyNumber = inputs[2].value.trim(' ');
-        const grade = inputs[3].value;
+        const grade = inputs[3].valueAsNumber.toFixed(2);
 
 
         if (!name || !lastName || !facultyNumber || !grade || !nameRegex.exec(name) || !nameRegex.exec(lastName)) {

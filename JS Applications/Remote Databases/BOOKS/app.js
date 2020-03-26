@@ -32,12 +32,11 @@ const formElement = {
             'tags': formElement.tags.value
         }
 
-        
         if (formElement.title.value !== '' && formElement.author.value !== '' && formElement.ISBN.value !== '') {
             await firebaseProvider.createBook(book);
             loadBooks();
         }
-        
+
         clearFormValues();
     }
 

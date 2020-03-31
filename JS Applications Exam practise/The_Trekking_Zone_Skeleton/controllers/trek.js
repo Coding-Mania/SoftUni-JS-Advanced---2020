@@ -10,6 +10,7 @@ export default {
         details(ctx){
             const {id} = ctx.params;
            
+            //TODO: details should be implemented
             models.trek.get(id)
             .then(r => console.log(r))
             .catch(console.error)

@@ -13,7 +13,8 @@ export default {
         },
         logout(ctx) {
             models.user.logout()
-                .then(r => ctx.redirect('/home'))
+                .then(r => extend(ctx)
+                    .then(r => this.redirect('/home')))
                 .catch(console.error)
         }
     },
@@ -32,7 +33,7 @@ export default {
             const { email, password } = ctx.params;
             models.user.login(email, password)
                 .then(r => {
-                    ctx.redirect('/home');
+                    extend(ctx).then(r => this.redirect('/home'));
                 })
                 .catch(console.error)
         }

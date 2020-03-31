@@ -1,6 +1,16 @@
 {{> header}}
 {{#if isLoggedIn}}
-{{#each treks}}
+{{#if treks}}
+<div id="treks-list">
+    {{#each treks}}
+    <a href="/details/{{id}}" class="card overflow-hidden treksPlaceholder trek-details" style="width: 20rem; height: 18rem;">
+        <div class="card-body">
+            <p class="card-text">{{location}}</p>
+        </div>
+        <img class="card-image" src="{{imageURL}}" alt="Card image cap">
+    </a>
+    {{/each}}
+</div>
 {{else}}
 <div class="container">
     <div class="row">
@@ -23,7 +33,7 @@
         </div>
     </div>
 </div>
-{{/each}}
+{{/if}}
 {{else}}
 <div class="home d-md-flex flex-md-equal  my-md-3 pl-md-3">
     <div style=" padding-left: 7%; padding-top:3%;" class="col-md-7">

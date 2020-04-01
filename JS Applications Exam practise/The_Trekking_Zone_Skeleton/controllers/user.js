@@ -1,5 +1,6 @@
 import extend from '../utils/context.js';
 import models from '../models/index.js';
+import trek from '../models/trek.js';
 
 export default {
     get: {
@@ -16,6 +17,14 @@ export default {
                 .then(r => extend(ctx)
                     .then(r => this.redirect('/home')))
                 .catch(console.error)
+        },
+        profile(ctx) {
+            models.trek.getAll().then(r => {
+                const treks = r.docs.map(d => { return { ...d.data(), id: d.id } }).filter(t => t.organizer === sessionStorage.getItem('email'));
+                ctx.treks = treks || {};
+                extend(ctx).
+                    partial('../views/user/profile.hbs');
+            })
         }
     },
     post: {
@@ -24,7 +33,8 @@ export default {
             if (password === rePassword) {
                 models.user.register(email, password)
                     .then(r => {
-                        ctx.redirect('/home');
+                        extend(ctx)
+                            .then(r => this.redirect('/home'));
                     })
                     .catch(console.error)
             }

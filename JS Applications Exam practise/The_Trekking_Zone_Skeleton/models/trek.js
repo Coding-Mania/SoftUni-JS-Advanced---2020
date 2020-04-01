@@ -2,16 +2,16 @@ export default {
     create(data) {
         return firebase.firestore().collection("treks").add(data);
     },
-    update(email, password) {
-       // return firebase.auth().signInWithEmailAndPassword(email, password);
+    update(id, data) {
+        return firebase.firestore().collection("treks").doc(id).update(data);
     },
-    delete() {
-        //return firebase.auth().signOut();
+    delete(id) {
+        return firebase.firestore().collection("treks").doc(id).delete();
     },
     getAll() {
         return firebase.firestore().collection("treks").get();
     },
-    get(id){
+    get(id) {
         return firebase.firestore().collection("treks").doc(id).get();
     }
 }

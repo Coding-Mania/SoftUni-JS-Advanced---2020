@@ -17,7 +17,7 @@ const app = Sammy('#home', function () {
     this.post('/register', controllers.user.post.register);
     this.post('/login', controllers.user.post.login);
     this.post('/create', controllers.trek.post.create);
-    this.post('/:id', controllers.trek.post.edit);
+    this.post('/edit/:id', controllers.trek.post.edit);
 })
 
 app.run('/home');

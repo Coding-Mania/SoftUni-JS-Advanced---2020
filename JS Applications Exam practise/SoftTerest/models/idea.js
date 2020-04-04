@@ -1,17 +1,17 @@
 export default {
     create(data) {
-        return firebase.firestore().collection("treks").add(data);
+        return firebase.firestore().collection("idea").add(data);
     },
     update(id, data) {
-        return firebase.firestore().collection("treks").doc(id).update(data);
+        return firebase.firestore().collection("idea").doc(id).update(data);
     },
     delete(id) {
-        return firebase.firestore().collection("treks").doc(id).delete();
+        return firebase.firestore().collection("idea").doc(id).delete();
     },
     getAll() {
-        return firebase.firestore().collection("treks").get();
+        return firebase.firestore().collection("idea").get();
     },
     get(id) {
-        return firebase.firestore().collection("treks").doc(id).get();
+        return firebase.firestore().collection("idea").doc(id).get();
     }
 }
